@@ -35,25 +35,25 @@ const ViewTabs = () => {
          */
 
         if(value === "view1"){
-            ReactDOM.render(<View1 viewText="" viewBtn={view1Btn} setBtn={setView2Btn} />, document.querySelector('#activity'))
             setView1Btn(true)
             setView2Btn(false)
             setView3Btn(false)
+            ReactDOM.render(<View1 viewText="" setView1Btn={setView1Btn} setView2Btn={setView2Btn} />, document.querySelector('#activity'))
         }
         else if(value === "view2"){
-            ReactDOM.render(<View2 viewText="" viewBtn={view2Btn} setBtn={setView3Btn} />, document.querySelector('#activity'))
             setView1Btn(false)
             setView2Btn(true)
             setView3Btn(false)
+            ReactDOM.render(<View2 viewText="" setView2Btn={setView2Btn} setView3Btn={setView3Btn} />, document.querySelector('#activity'))
         }
         else if(value === "view3"){
-            ReactDOM.render(<View3 viewText="" viewBtn={view3Btn} setBtn={setView3Btn} />, document.querySelector('#activity'))
             setView1Btn(false)
             setView2Btn(false)
             setView3Btn(true)
+            ReactDOM.render(<View3 viewText="" />, document.querySelector('#activity'))
         }
         else{
-            ReactDOM.render(<View1 viewText="" viewBtn={view2Btn} setBtn={setView2Btn} />, document.querySelector('#activity'))
+            ReactDOM.render(<View2 viewText="" />, document.querySelector('#activity'))
         }
     }
 
@@ -81,13 +81,13 @@ const ViewTabs = () => {
     return(
         <>
             <div className="w-100">
-                <button className={view1Btn ? "btn btn-danger m-2" : "btn btn-primary m-2"} id="tab" onClick={() => {
+                <button className={view1Btn ? "btn btn-danger m-2" : "btn btn-primary m-2"} id="tab1" onClick={() => {
                     tabToggel("view1")
                 }}>View 1</button>
-                <button className={view2Btn ? "btn btn-danger m-2" : "btn btn-primary m-2"} id="tab" onClick={() => {
+                <button className={view2Btn ? "btn btn-danger m-2" : "btn btn-primary m-2"} id="tab2" onClick={() => {
                     tabToggel("view2")
                 }}>View 2</button>
-                <button className={view3Btn ? "btn btn-danger m-2" : "btn btn-primary m-2"} id="tab" onClick={() => {
+                <button className={view3Btn ? "btn btn-danger m-2" : "btn btn-primary m-2"} id="tab3" onClick={() => {
                     tabToggel("view3")
                 }}>View 3</button>
                 <Button variant="contained" onClick={popupOpen}>
@@ -101,13 +101,13 @@ const ViewTabs = () => {
                 >
                     <div class={popUp ? "card bg-light d-inline w-25 m-5 mb-5 shadow-lg" : "d-none"}>
                         <div className="popup text-center">
-                            <button className={view1Btn ? "btn btn-danger my-3 w-75" : "btn btn-primary my-3 w-75"} id="tab" onClick={() => {
+                            <button className={view1Btn ? "btn btn-danger my-3 w-75" : "btn btn-primary my-3 w-75"} id="tab1" onClick={() => {
                                 tabToggel("view1")
                             }}>View 1</button>
-                            <button className={view2Btn ? "btn btn-danger my-3 w-75" : "btn btn-primary my-3 w-75"} id="tab" onClick={() => {
+                            <button className={view2Btn ? "btn btn-danger my-3 w-75" : "btn btn-primary my-3 w-75"} id="tab2" onClick={() => {
                                 tabToggel("view2")
                             }}>View 2</button>
-                            <button className={view3Btn ? "btn btn-danger my-3 w-75" : "btn btn-primary my-3 w-75"} id="tab" onClick={() => {
+                            <button className={view3Btn ? "btn btn-danger my-3 w-75" : "btn btn-primary my-3 w-75"} id="tab3" onClick={() => {
                                 tabToggel("view3")
                             }}>View 3</button>
                         </div>

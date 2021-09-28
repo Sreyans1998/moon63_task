@@ -25,17 +25,17 @@ const View3 = (props) => {
                     View3 Tab
                 </h1>
                 <div className="container card m-3 position-relative mx-auto h-50">
-                    <h1 className="card-header">
+                    <h1 className="card-header mt-2">
                         Text Box
                     </h1>
-                    <textarea class="form-control" 
+                    <textarea class="form-control mt-4" 
                         id="exampleFormControlTextarea1" 
                         rows="3">
                             {props.viewText}
                     </textarea>
                     <div class="position-relative card-body m-5">
                         <label for="exampleFormControlTextarea1" class="form-label fs-3">Write Your Text Here</label>
-                        <textarea class="form-control" 
+                        <textarea class="form-control mb-5" 
                         id="exampleFormControlTextarea1" 
                         rows="3"
                         value={viewText}
