@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import View2 from "./View2"
-import ViewTabs from "./Utility/ViewTabs"
 
 /*This Method is use to render first MAINVIEW_HOLDER into jsx format
 Using onClick even it also use to store data on textarea in viewText variable 
@@ -15,19 +14,21 @@ const View1 = (props) => {
     const [viewText, setViewText] = useState('')
 
 
-    /*In sendData method we simply render the second MAINVIEW_HOLDER using onClick event */
+    /*
+        In sendData method we simply render the third MAINVIEW_HOLDER using onClick event 
+        and change the state of view buttons
+    */
 
     const sendData = async (value) => {
         await ReactDOM.render(<View2 viewText={value} />, document.querySelector('#activity'))
+        props.setView1Btn(false)
+        props.setView2Btn(true)
     }
 
     /*Here we returns the VIEWMENU_HOLDER in jsx format. */
 
     return(
         <>
-            <div className="bg-light shadow-lg">
-                <ViewTabs />
-            </div>
             <div className="card m-5 w-75 mx-auto shadow-lg">
                 <h1 className="text-center m-3">
                     View1 Tab
@@ -48,7 +49,7 @@ const View1 = (props) => {
                         </textarea>
                     </div>
                     <button className="position-relative mt-5 w-25 btn btn-primary mx-auto" onClick={() => {
-                        sendData(viewText)}    
+                        sendData(viewText)}   
                     }>
                     Submit
                     </button>

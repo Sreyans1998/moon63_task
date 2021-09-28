@@ -15,10 +15,15 @@ const View2 = (props) => {
     const [viewText, setViewText] = useState('')
 
 
-    /*In sendData method we simply render the third MAINVIEW_HOLDER using onClick event */
+    /*
+        In sendData method we simply render the third MAINVIEW_HOLDER using onClick event 
+        and change the state of view buttons
+    */
 
     const sendData = async (value) => {
         await ReactDOM.render(<View3 viewText={value} />, document.querySelector('#activity'))
+        props.setView2Btn(false)
+        props.setView3Btn(true)
     }
 
     /*Here we returns the VIEWMENU_HOLDER in jsx format. */
